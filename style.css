@@ -8,6 +8,7 @@
     font-style: normal;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .header {
@@ -17,6 +18,29 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    overflow: hidden;
+    padding-bottom: 0; 
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px; 
+    position: relative;
+    width: 100%;
+}
+
+.event-heading {
+    text-align: center;
+    color: #B8860B; /* Gold color */
+    font-family: Marcellus, serif;
+    margin: 0px 0 20px;
+    font-size: 24px;
 }
 
 nav {
@@ -30,10 +54,18 @@ nav img {
     width: 250px;
     max-width: 80%;
 }
-
+/* 
 .navlinks {
     flex: 1;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navlinks ul {
+    display: flex;
+    align-items: center;
 }
 
 .navlinks ul li {
@@ -41,7 +73,7 @@ nav img {
     display: inline-block;
     padding: 8px 16px;
     position: relative;
-    font-family: Manrope;
+    font-family: Manrope, sans-serif;
 }
 
 .navlinks a {
@@ -65,10 +97,10 @@ nav img {
 
 .navlinks ul li:hover::after {
     width: 100%;
-}
+} */
 
 .whatsapp-btn {
-    font-family: Marcellus;
+    font-family: Marcellus, serif;
     display: flex;
     width: 130px;
     padding: 8px 16px;
@@ -84,6 +116,7 @@ nav img {
     font-weight: 400;
     text-decoration: none;
     transition: all 0.3s ease;
+    margin-left: 16px;
 }
 
 .whatsapp-icon {
@@ -107,326 +140,197 @@ nav img {
     width: 90%;
     max-width: 800px;
     color: #0F0B0C;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -25%);
+    position: relative; /* Change from absolute to relative */
     text-align: center;
     padding: 0 15px;
+    margin: 0 auto;
+    z-index: 2;
 }
 
 .textbox h1 {
     font-size: 52px;
-    font-family: Marcellus;
+    font-family: Marcellus, serif;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
 .textbox p {
-    margin: 10px 0 20px;
+    margin: 10px 0 30px;
     font-size: 20px;
     color: #0F0B0C;
-    font-family: Jost;
+    font-family: Jost, sans-serif;
     font-weight: 300;
+    line-height: 1.5;
 }
 
 .hero-btn {
-    display: inline-block;
-    text-decoration: none;
+    display: block;
     width: 200px;
     padding: 16px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
     border-radius: 100px;
     background: #000;
     color: #FFFCF7;
     font-size: 16px;
     text-transform: uppercase;
-    font-family: Jost;
+    font-family: Jost, sans-serif;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 /* Mobile navigation */
-.nav-toggle {
+.nav-toggle, nav .fa {
     display: none;
+    cursor: pointer;
 }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-    .textbox h1 {
-        font-size: 42px;
-    }
-    
-    .textbox p {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    nav {
-        padding: 2% 4%;
-    }
-    
-    .textbox {
-        top: 30%;
-    }
-    
-    .textbox h1 {
-        font-size: 36px;
-    }
-    
-    .textbox p {
-        font-size: 16px;
-    }
-    
-    .hero-btn {
-        width: 180px;
-        padding: 14px 20px;
-    }
-    
-    .navlinks ul li {
-        padding: 6px 10px;
-    }
-    
-    .navlinks a {
-        font-size: 14px;
-    }
-    
-    .whatsapp-btn {
-        width: 120px;
-        font-size: 14px;
-    }
-    
-    .whatsapp-icon {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .nav-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-    }
-    
-    .navlinks {
-        position: fixed;
-        background: #FFFCF7;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 999;
-        transition: 0.5s;
-        padding-top: 60px;
-    }
-    
-    .navlinks.active {
-        right: 0;
-    }
-    
-    .navlinks ul li {
-        display: block;
-        padding: 15px 25px;
-    }
-    
-    .navlinks ul li::after {
-        display: none;
-    }
-    
-    .textbox {
-        top: 40%;
-        transform: translate(-50%, -40%);
-    }
-    
-    .textbox h1 {
-        font-size: 30px;
-    }
-    
-    .textbox p {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
-    
-    .hero-btn {
-        width: 160px;
-        padding: 12px 18px;
-        font-size: 14px;
-    }
-}
-
-/* For extra small devices */
-@media (max-width: 375px) {
-    .textbox h1 {
-        font-size: 26px;
-    }
-    
-    .hero-btn {
-        width: 140px;
-        padding: 10px 16px;
-        font-size: 12px;
-    }
-}
-
-nav .fa{
-    display: none;
-}
-
-
-/*Medaiquery*/
-@media(max-width:700px) {
-    .header{
-        padding: 20px 0 20px;
-        min-height: 20vh;
-    }
-    .textbox{
-        width: 90%;
-        color:#0F0B0C;
-        position:absolute;
-        top :20%;
-        left:22%;
-        transform: translate(-20%,-20%);
-        text-align: center;
-    }
-    .textbox h1{
-        font-size: 24px;
-        font-family: Marcellus;
-        font-weight: 400;
-    }
-    .textbox p{
-        margin: 10px 40px 8px;
-        font-size: 16px;
-        color:#0F0B0C;
-        font-family: Jost;
-        font-weight: 300;
-    }
-    .hero-btn{
-        display: inline-block;
-        text-decoration: none;
-        width: 200px;
-        padding: 16px 16px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-        border-radius: 100px;
-        background: #000;
-    }
-    .navlinks ul li{
-        margin: top;
-        display: block;
-        color: #FFFCF7;
-    }
-    .navlinks{
-        position:absolute;
-        background: #dab253;
-        height:100vh;
-        width: 200px;
-        top:0;
-        right:-200;
-        text-align: left;
-        z-index: 2;
-        color: #FFFCF7;
-        transition: 1s;
-    }
-    .whatsapp-btn {
-        display: none;
-    }
-    nav .fa{
-        display: block;
-        color:#0F0B0C;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-    .navlinks ul{
-        padding:30px ;
-        text-align: center;
-    }
-    .carousel img {
-        width: 100px;
-        height: 250px;
-        border-radius: 10px;
-        object-fit: cover;
-    }
-}
-/* end of mediaquery */
-
-
+/* Carousel Styles */
 .carousel {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
     width: 100%;
     background: transparent;
-    padding: 10px 0;
-    margin-top: 340px; /*we can adj this height*/
-    margin-bottom: 50px;
-    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden; 
+    white-space: nowrap;
 }
+
 .carousel-track {
     display: inline-block;
     animation: scroll 15s linear infinite;
+    white-space: nowrap;
+    width: max-content; 
 }
+
 .carousel img {
     width: 200px;
     height: 250px;
     border-radius: 10px;
-    padding: 0 4px 0;
+    padding: 0 4px;
     object-fit: cover;
+    vertical-align: middle;
+    flex-shrink: 0; /* Add this to prevent images from shrinking */
 }
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); 
+        transform: translateX(-50%); 
     }
 }
+
+/* Scroll Down Animation */
 .scroll-down {
     height: 50px;
     width: 30px;
     border: 2px solid #0F0B0C;
     position: absolute;
     left: 50%;
-    bottom:50px;
+    bottom: 30px;
     border-radius: 50px;
     cursor: pointer;
+    transform: translateX(-50%);
 }
+
 .scroll-down::before,
-.scroll-down::after{
-    content:"";
-    position:absolute;
-    top:20%;
-    left:50%;
-    border:2px solid #0F0B0C;
-    height:10px;
+.scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    border: 2px solid #0F0B0C;
+    height: 10px;
     width: 10px;
-    transform: translate(-50%,-100%) rotate(45deg);
+    transform: translate(-50%, -100%) rotate(45deg);
     border-top: transparent;
     border-left: transparent;
     animation: scroll-down 1s ease-in-out infinite;
 }
-.scroll-down::after{
-    top:30%;
+
+.scroll-down::after {
+    top: 30%;
     animation-delay: .3s;
 }
-@keyframes scroll-down{
-    0%{
+
+@keyframes scroll-down {
+    0% {
         opacity: 0;
     }
-    30%{
+    30% {
         opacity: 1;
     }
-    60%{
+    60% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
-        top:90%
+        top: 90%;
+    }
+}
+/* Media query for mobile */
+@media (max-width: 700px) {
+    .header{
+        min-height: 80vh;
+    }
+    
+    .header-content {
+        padding-top: 60px;
+    }
+    
+    .textbox h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .textbox p {
+        margin: 10px 0 20px;
+        font-size: 16px;
+    }
+    
+    .event-heading {
+        margin: 30px 0 15px;
+        font-size: 20px;
+    }
+    
+    .hero-btn {
+        width: 180px;
+        padding: 14px 16px;
+        margin: 15px auto;
+    }
+    
+    .carousel {
+        margin-top: 15px;
+    }
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .header{
+        min-height: 80vh;
+        padding-top: 20px;
+    }
+    
+    .header-content {
+        padding-top: 50px;
+    }
+    
+    .textbox h1 {
+        font-size: 24px;
+    }
+    
+    .event-heading {
+        font-size: 18px;
+        margin: 25px 0 10px;
+    }
+    .scroll-down{
+        display: none;
     }
 }
 
@@ -437,8 +341,7 @@ nav .fa{
     text-align: center;
     font-size: clamp(18px, 4vw, 24px);
     background: #fff;
-    padding: 40px 20px 40px;
-    /* Remove min-height completely */
+    padding: 40px 5vw;
 }
 
 #brandLogos > h1 {
@@ -449,63 +352,67 @@ nav .fa{
 
 .logos {
     width: 100%;
-    position: relative;
     display: flex;
     justify-content: center;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    white-space: nowrap;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in Edge */
+}
+
+.logos::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome and Safari */
 }
 
 .logos-slide {
     display: flex;
     gap: clamp(10px, 2vw, 20px);
     align-items: center;
-    margin: 0 auto;
     justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping for better layout on smaller screens */
+    max-width: 90%;
 }
 
 .logos-slide img {
     height: clamp(25px, 5vw, 40px);
     object-fit: contain;
+    max-width: 100px; /* Prevents logos from being too large */
 }
 
-/* For laptop view */
-@media (min-width: 769px) and (max-width: 1440px) {
+/* Laptop and Tablet Landscape */
+@media (max-width: 1440px) {
     .logos-slide {
-        justify-content: center;
-        width: auto;
-        margin: 0 auto;
-        padding: 0 0 40px;
+        width: 100%;
+        padding-bottom: 40px;
     }
 }
 
-/* For mobile view */
+/* Tablet Portrait and Mobile */
 @media (max-width: 768px) {
     .logos {
-        overflow-y: visible;
+        overflow: visible;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    
+
     .logos-slide {
         flex-direction: column;
         width: 100%;
         padding: 0;
-        gap: 25px; /* Slightly reduced gap */
+        gap: 20px; /* Balanced spacing */
     }
-    
+
     .logos-slide img {
-        height: auto;
         max-height: 35px;
-        max-width: 70%;
+        max-width: 60%;
     }
-    
+
     #brandLogos {
-        padding: 30px 20px 40px; /* Added bottom padding */
-        height:14%;
-    }
-    
-    /* Add this to remove excess space after the last logo */
-    .logos-slide::after {
-        content: none;
+        padding: 30px 5vw;
     }
 }
+
 
 /* founder section */
 .container {
@@ -515,26 +422,26 @@ nav .fa{
     max-width: 100%;
     background-color: #FFFCF7;
     background-position: center;
-    padding: 20px 380px;
-    height: 45vh;
+    padding: 20px 15vw;
+    min-height: 45vh;
     flex-wrap: wrap;
 }
 
+/* Ensures images and text scale well */
 .image-section {
     flex: 1;
     text-align: center;
     max-width: 100%;
     position: relative;
     width: 220px;
-    height: 330px;
+    height: auto;
     border-radius: 10px;
     overflow: hidden;
-    text-align: left;
 }
 
 .image-section img {
     width: 100%;
-    height: 330px;
+    max-height: 330px;
     display: block;
     object-fit: cover;
     border-radius: 10px;
@@ -621,42 +528,31 @@ nav .fa{
 /* Large Desktop Screens */
 @media screen and (max-width: 1440px) {
     .container {
-        padding: 20px 200px;
-    }
-    .scroll-down{
-        display: none;
+        padding: 20px 12vw;
     }
 }
 
 /* Desktop Screens */
 @media screen and (max-width: 1200px) {
     .container {
-        padding: 20px 100px;
-    }
-    .scroll-down{
-        display: none;
+        padding: 20px 8vw;
     }
 }
-
 
 /* Small Desktop and Tablet Landscape */
 @media screen and (max-width: 1024px) {
     .container {
-        padding: 20px 50px;
-        height: auto;
-        min-height: 45vh;
-    }
-    .scroll-down{
-        display: none;
+        padding: 20px 5vw;
+        min-height: auto;
     }
 }
 
 /* Tablet Portrait */
 @media screen and (max-width: 768px) {
     .container {
-        padding: 60px 30px;
+        padding: 40px 30px;
         flex-direction: column;
-        margin-top: 380px;
+        text-align: center;
     }
     
     .image-section {
@@ -665,17 +561,34 @@ nav .fa{
     
     .text-section {
         padding-left: 0;
-        text-align: center;
     }
     
     .tag {
         margin: 0 auto;
         display: table;
     }
-    .scroll-down{
-        display: none;
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .text-section h1 {
+        font-size: 20px;
+    }
+
+    .text-section p {
+        font-size: 14px;
+    }
+
+    .name-overlay {
+        font-size: 10px;
+        padding: 5px 8px;
     }
 }
+
 
 
 /* service section */
@@ -1097,6 +1010,7 @@ nav .fa{
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 10px 0;
 }
 
 .testimonial-card {
@@ -1110,7 +1024,7 @@ nav .fa{
     position: relative;
     border-radius: 8px;
     flex: 0 0 auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
 }
 
 .testimonial-card:hover {
@@ -1119,7 +1033,6 @@ nav .fa{
 
 .testimonial-text {
     font-size: 16px;
-    line-height: 1.6;
     margin-bottom: 20px;
     color: #fff;
     padding: 30px;
@@ -1496,11 +1409,21 @@ footer {
 }
 
 .social-icons {
-    margin: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 10px 10px;
 }
+.social-icons a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
 .footer-bottom {
     margin-top: 20px;
     font-size: 12px;

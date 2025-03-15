@@ -16,7 +16,7 @@
     <section class = "header">
         <nav>
             <a href="index.html"> <img src="https://i.postimg.cc/PfFNqWym/Logo.png"></a>
-            <div class="navlinks" id="navLinks">
+            <!-- <div class="navlinks" id="navLinks">
                 <i class="fa fa-times-circle" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="">Home</a></li>
@@ -26,18 +26,22 @@
                     <li><a href="">Testimonials</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>
-            </div>
+            </div> -->
             <a href="https://wa.me/9962171281" target="_blank" class="whatsapp-btn">
                 <img src="https://i.postimg.cc/SxcvsG6R/whatsapp-icon-2040x2048-8b5th74o.png" alt="WhatsApp" class="whatsapp-icon">  WhatsApp
             </a>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-        <div class="textbox">
-            <h1>Welcome to Empress Corp</h1>
-                <p>Looking for a top event management company in Chennai? <br>Empress Corp is here to create unforgettable events for you.</p>
-                <p><span style="color: #DAB253; font-family: jost; font-size: 18px; font-weight:700; text-transform: uppercase;">Chennai's #1 Event Management Company</span></p>
-                <a href="#contact-section"class="hero-btn">Contact Us Today!</a>
-        </div>
+        <div class="header-content">
+            <div class="textbox">
+                <h1>Welcome to Empress Corp</h1>
+                <p>Looking for a top event management company in Chennai? Empress Corp is here to create unforgettable events for you.</p>
+            </div>
+            
+            <h2 class="event-heading">CHENNAI'S #1 EVENT MANAGEMENT COMPANY</h2>
+            
+            <a href="#contact" class="hero-btn">CONTACT US</a>
+
         <div class="carousel">
             <div class="carousel-track">
                 <img src="https://i.postimg.cc/W4n1cgtq/Rectangle-84.png" alt="Event Image 1">
@@ -198,32 +202,28 @@
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number-container">
-                    <span class="stat-number" id="events-count">0</span>
-                    <span class="stat-plus">+</span>
+                    <span class="stat-number">500+</span>
                 </div>
                 <div class="stat-title">Successful Events</div>
             </div>
             
             <div class="stat-item">
                 <div class="stat-number-container">
-                    <span class="stat-number" id="years-count">0</span>
-                    <span class="stat-plus">+</span>
+                    <span class="stat-number">15+</span>
                 </div>
                 <div class="stat-title">Years of Experience</div>
             </div>
             
             <div class="stat-item">
                 <div class="stat-number-container">
-                    <span class="stat-number" id="clients-count">0</span>
-                    <span class="stat-plus">+</span>
+                    <span class="stat-number" id="clients-count">150+</span>
                 </div>
                 <div class="stat-title">Corporate Clients</div>
             </div>
             
             <div class="stat-item">
                 <div class="stat-number-container">
-                    <span class="stat-number" id="satisfaction-count">0</span>
-                    <span class="stat-plus">%</span>
+                    <span class="stat-number" id="satisfaction-count">100%</span>
                 </div>
                 <div class="stat-title">Client Satisfaction Rate</div>
             </div>
@@ -345,10 +345,10 @@
         </div> -->
 
         <div class="social-icons">
-            <a href="https://www.facebook.com/empresscorp.chennai"><img src="https://i.postimg.cc/xTNCRmsG/fb.png" width="40" height="40" ></a>
-            <a href="https://www.instagram.com/empresscorp.chennai/"><img src="https://i.postimg.cc/PqT5TRdK/insta.png" width="40" height="40"></a>
-            <a href="https://www.linkedin.com/company/empress-corp/?viewAsMember=true"><img src="https://i.postimg.cc/XYMvDvhR/lin.png" width="40" height="40"></a>
-            <a href="https://api.whatsapp.com/send?phone=919962171281"><img src="https://i.postimg.cc/MpyGkSJv/was.png" width="40" height="40"></a>
+            <a href="https://www.facebook.com/empresscorp.chennai" target="_blank"><img src="https://i.postimg.cc/xTNCRmsG/fb.png" width="40" height="40" alt="facebook"></a>
+            <a href="https://www.instagram.com/empresscorp.chennai/" target="_blank"><img src="https://i.postimg.cc/0j5Q8Wb1/insta.png" width="40" height="40" alt="instagram"></a>
+            <a href="https://www.linkedin.com/company/empress-corp/?viewAsMember=true"target="_blank"><img src="https://i.postimg.cc/XYMvDvhR/lin.png" width="40" height="40" alt="linkedin"></a>
+            <a href="https://api.whatsapp.com/send?phone=919962171281" target="_blank"><img src="https://i.postimg.cc/MpyGkSJv/was.png" width="40" height="40" alt="whatsapp"></a>
         </div>
 
         <div class="footer-bottom">
@@ -376,60 +376,6 @@
         function hideMenu(){
             navLinks.style.right = "-200px";
         }
-    </script>
-
-
-    <!-- ---JavaScript for animation starts counter section -->
-    <script>
-        // Function to animate counting up
-        function animateCounter(id, start, end, duration) {
-            let startTimestamp = null;
-            const element = document.getElementById(id);
-            
-            function step(timestamp) {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = Math.floor(progress * (end - start) + start);
-                element.textContent = value;
-                
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            }
-            
-            window.requestAnimationFrame(step);
-        }
-        function isInViewport(element) {
-        if (!element) return false; // Prevent errors if the element is null
-        return element.getBoundingClientRect().top >= 0;
-        }
-    
-        // Start animation when scrolled into view
-        function handleScroll() {
-            const statsContainer = document.querySelector('.stats-container');
-            
-            if (isInViewport(statsContainer)) {
-                // Start the animations
-                animateCounter('events-count', 0, 500, 2000);
-                animateCounter('years-count', 0, 15, 1500);
-                animateCounter('clients-count', 0, 150, 1800);
-                animateCounter('satisfaction-count', 0, 100, 1500);
-                
-                // Remove the scroll listener once animations have started
-                window.removeEventListener('scroll', handleScroll);
-            }
-        }
-        
-        // Add scroll event listener
-        window.addEventListener('scroll', handleScroll);
-        
-        // For demo purposes, trigger the animation right away
-        setTimeout(function() {
-            animateCounter('events-count', 0, 500, 2000);
-            animateCounter('years-count', 0, 15, 1500);
-            animateCounter('clients-count', 0, 150, 1800);
-            animateCounter('satisfaction-count', 0, 100, 1500);
-        }, 500);
     </script>
 
 
