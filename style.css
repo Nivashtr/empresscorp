@@ -121,8 +121,8 @@ nav img {
 }
 
 .whatsapp-icon {
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
     transition: all 0.3s ease;
 }
@@ -169,7 +169,7 @@ nav img {
     width: 200px;
     padding: 16px 24px;
     border-radius: 100px;
-    background: #000;
+    background-color: #b27730;
     color: #FFFCF7;
     font-size: 16px;
     text-transform: uppercase;
@@ -181,6 +181,11 @@ nav img {
     text-align: center;
     position: relative;
     z-index: 10;
+    transition: all 0.3s ease;
+}
+.hero-btn:hover {
+    background-color: #96632a;
+    color: white;
 }
 
 /* Mobile navigation */
@@ -1446,10 +1451,6 @@ footer {
     text-decoration: none;
     margin-left: 10px;
 }
-
-.footer-bottom a:hover {
-    color: #e6b85a;
-}
 .footer-btn {
     display: inline-block;
     text-decoration: none;
@@ -1465,4 +1466,9 @@ footer {
     text-transform: uppercase;
     font-family: Jost;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+.footer-btn:hover{
+    background-color: #96632a;
+    color:white;
 }
